@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lhp98p0ae-python-gitops
+  description: This is GitOps manifest for lhp98p0ae-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=lhp98p0ae-python
+    backstage.io/kubernetes-id: lhp98p0ae-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: lhp98p0ae-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lhp98p0ae-python
